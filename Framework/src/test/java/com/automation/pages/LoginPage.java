@@ -12,8 +12,8 @@ public class LoginPage {
 		this.driver = ldriver;
 	}
 	
-	@FindBy(name="email")
-	WebElement email;
+	@FindBy(name="username")
+	WebElement user;
 	
 	@FindBy(name="password")
 	WebElement pass;
@@ -28,7 +28,7 @@ public class LoginPage {
 		
 		startHere.click();
 		
-		email.sendKeys(username);
+		user.sendKeys(username);
 		pass.sendKeys(password);
 		
 		loginButton.click();
