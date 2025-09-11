@@ -75,8 +75,13 @@
 				<version>3.5.3</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>XML Files\${xmlFiles}</suiteXmlFile>
 					</suiteXmlFiles>
+					
+					<systemPropertyVariables>
+						<executionBrowser>${browser}</executionBrowser>
+						<appURL>${urlToBeTested}</appURL>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 

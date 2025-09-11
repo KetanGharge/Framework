@@ -9,6 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -41,10 +42,20 @@ public class BaseClass {
 		Reporter.log("Settings Done-Test can be started",true);
 	}
 	
+	//To pass browser and Url from Config.properties file
+//	@BeforeClass
+//	public void setup() {
+//		Reporter.log("trying to start Browser and getting application ready",true);
+//		driver = BrowserFactory.startApplication(driver, conf.getBrowser(), conf.getStagingURL());
+//		Reporter.log("Browser and application up and running",true);
+//	}
+
+	//To pass browser and Url from testNG.XML
+	@Parameters({"browser","urlToBeTested"})
 	@BeforeClass
-	public void setup() {
+	public void setup(String browser, String urlToBeTested) {
 		Reporter.log("trying to start Browser and getting application ready",true);
-		driver = BrowserFactory.startApplication(driver, conf.getBrowser(), conf.getStagingURL());
+		driver = BrowserFactory.startApplication(driver, browser, urlToBeTested);
 		Reporter.log("Browser and application up and running",true);
 	}
 	

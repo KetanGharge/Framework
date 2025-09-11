@@ -18,15 +18,10 @@ public class LoginPage {
 	@FindBy(name="password")
 	WebElement pass;
 	
-	@FindBy(xpath="//a/span[contains(text(),'Start Here')]")
-	WebElement startHere;
-	
-	@FindBy(xpath="//div[contains(text(),'Login')]")
+	@FindBy(xpath="//input[@value='Login']")
 	WebElement loginButton;
 	
 	public void loginToCRM(String username,String password) {
-		
-		startHere.click();
 		
 		user.sendKeys(username);
 		pass.sendKeys(password);
